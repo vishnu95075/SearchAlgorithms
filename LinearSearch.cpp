@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
  
-int search(int arr[], int n, int x)
+int linearSearch(int arr[], int n, int x)
 {
     int i;
     for (i = 0; i < n; i++)
@@ -28,7 +28,7 @@ int main(void)
     int n = sizeof(arr) / sizeof(arr[0]);
    
     // Function call
-    int result = search(arr, n, x);
+    int result = linearSearch(arr, n, x);
     (result == -1)
         ? cout << "Element is not in the array :-("
         : cout << "Element found at position :" << result;
