@@ -1,4 +1,5 @@
 /******************************************************************************
+C++ code for jump search
 To execute this code you can use online gdb - an online compiler for quick execution of snippets
 or any tool you prefer!
 *******************************************************************************/
@@ -36,10 +37,10 @@ int jumpSearch(int arr[], int n, int key)
 int main(void)
 {
     // arr - array of element
-    int arr[] = { 2, 3, 4, 10, 40 };
+    int arr[] = { 8, 23, 45, 56, 67, 89, 90, 100, 103, 107, 135, 167, 189, 190, 200, 210, 345} ;
   
     // x - search key
-    int key = 3;
+    int key = 167;
   
     // n - size of array (found by dividing size of 
     // entire array by size of single element from the array
