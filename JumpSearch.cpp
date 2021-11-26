@@ -17,7 +17,8 @@ int jumpSearch(int arr[], int n, int key)
     int prev = 0;
     while(arr[step] < key){
         prev = step;
-        step = step + step;
+        step = step + sqrt(n);
+        if(step >= n ) break;
     }
     
     // linear search till we find the key
