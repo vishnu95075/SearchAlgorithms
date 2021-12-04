@@ -10,25 +10,23 @@ using namespace std;
  
 int jumpSearch(int arr[], int n, int key)
 {
-    int i;
-    // a good step size is square root of the number
-    int step = sqrt(n);
-  
-    // keep track of the previous step
-    int prev = 0;
-    while(arr[step] < key){
-        prev = step;
-        step = step + sqrt(n);
-        if(step >= n ) break;
+	   // keep track of the previous end 
+    int start = 0;
+
+    // a good jump size is square root of the array length
+    int end = sqrt(n);
+    
+    while(arr[end] < key && end < n){
+        start = end;
+        end = end + sqrt(n);
+        if(end > n - 1)
+           end = n-1;
     }
     
-    // linear search till we find the key
-    // between prev and step
-    while(prev <= step){
-        if(arr[prev] == key){
-            return prev;
-        }
-        prev = prev + 1;
+    //perform linear search in selected subarray/block
+	   for(int i = start; i <= end; i++) { 
+      if(arr[i] == key)
+         return i; //return position of the key
     }
     return -1;
 }
@@ -37,10 +35,10 @@ int jumpSearch(int arr[], int n, int key)
 int main(void)
 {
     // arr - array of element
-    int arr[] = { 8, 23, 45, 56, 67, 89, 90, 100, 103, 107, 135, 167, 189, 190, 200, 210, 345} ;
+    int arr[] = { 8, 23, 45, 56, 67, 89, 90, 100, 103} ;
   
-    // x - search key
-    int key = 167;
+    // search key
+    int key = 100;
   
     // n - size of array (found by dividing size of 
     // entire array by size of single element from the array
